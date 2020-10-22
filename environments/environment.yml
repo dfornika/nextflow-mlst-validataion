@@ -1,0 +1,14 @@
+name: mlst-validation
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - python=3
+  - fastp=0.20.1
+  - bwa=0.7.17
+  - samtools=1.10
+  - art=2016.06.05
+  - shovill=1.0.4
+  - mlst=2.16.1
+  - quast=5.0.2
