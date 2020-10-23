@@ -3,7 +3,7 @@ process art {
     label 'cpu4'
 
     input:
-    path(assembly)
+    tuple val(assembly_id), path(assembly), val(fold_coverage)
 
     output:
     tuple val(assembly_id), path("${assembly_id}_R1.fastq.gz"), path("${assembly_id}_R2.fastq.gz")
@@ -13,7 +13,7 @@ process art {
     mean_fragment_length = 300
     stdev_fragment_length = 50
     read_length = 250
-    fold_coverage = 20
+    fold_coverage = 5
     """
     echo "${assembly_id}" > assembly_id.txt
     art_illumina \

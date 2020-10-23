@@ -6,6 +6,7 @@ include { simulate_reads } from './workflows/simulate_reads.nf'
 include { assemble_and_mlst } from './workflows/assemble_and_mlst.nf'
 include { mlst_on_assembly } from './workflows/mlst_on_assembly.nf'
 include { align_reads_to_assembly } from './workflows/align_reads_to_assembly.nf'
+include { summary } from './workflows/summary.nf'
 
 if (params.profile){
     println("Profile should have a single dash: -profile")
@@ -33,4 +34,5 @@ workflow {
   assemble_and_mlst(
     simulate_reads.out
   )
+
 }

@@ -1,6 +1,7 @@
 process mlst {
     tag { sample_id }
     label 'cpu4'
+    publishDir "${params.outdir}/mlst", pattern: "${sample_id}.mlst.*", mode: 'copy'
 
     input:
     tuple val(sample_id), path(assembly)
